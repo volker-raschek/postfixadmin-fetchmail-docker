@@ -1,0 +1,12 @@
+version: "3"
+services:
+  fetchmail:
+    container_name: fetchmail
+    image: volkerraschek/fetchmail-docker:latest
+    environment:
+    - DATABASE_TYPE=${DATABASE_TYPE}
+    - DATABASE_HOST=${DATABASE_HOST}
+    - DATABASE_NAME=${DATABASE_NAME}
+    - DATABASE_USER=${DATABASE_USER}
+    - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    network_mode: host
