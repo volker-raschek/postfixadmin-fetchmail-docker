@@ -25,6 +25,7 @@ $ docker run \
   --rm \
   --env DATABASE_TYPE: Pg \
   --env DATABASE_HOST: postgres \
+  --env DATABASE_PORT: 5432 \
   --env DATABASE_NAME: postgres \
   --env DATABASE_USER: fetchmail \
   --env DATABASE_PASSWORD: MySecretPassword \
@@ -39,6 +40,7 @@ $ docker run \
   --rm \
   --env DATABASE_TYPE: my \
   --env DATABASE_HOST: root \
+  --env DATABASE_PORT: 3306 \
   --env DATABASE_NAME: mysql \
   --env DATABASE_USER: fetchmail \
   --env DATABASE_PASSWORD: MySecretPassword \
@@ -62,6 +64,7 @@ services:
     environment:
     - DATABASE_TYPE=${DATABASE_TYPE}
     - DATABASE_HOST=${DATABASE_HOST}
+    - DATABASE_HOST=${DATABASE_PORT}
     - DATABASE_NAME=${DATABASE_NAME}
     - DATABASE_USER=${DATABASE_USER}
     - DATABASE_PASSWORD=${DATABASE_PASSWORD}

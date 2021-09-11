@@ -15,10 +15,11 @@ use LockFile::Simple qw(lock trylock unlock);
 
 # database backend - uncomment one of these
 our $db_type=$ENV{'DATABASE_TYPE'};
-our $db_host=$ENV{'DATABASE_HOST'};
-our $db_name=$ENV{'DATABASE_NAME'};
 our $db_username=$ENV{'DATABASE_USER'};
 our $db_password=$ENV{'DATABASE_PASSWORD'};
+our $db_host=$ENV{'DATABASE_HOST'};
+our $db_port=$ENV{'DATABASE_PORT'};
+our $db_name=$ENV{'DATABASE_NAME'};
 
 # instead of changing this script, you can put your settings to /etc/mail/postfixadmin/fetchmail.conf
 # just use perl syntax there to fill the variables listed above (without the "our" keyword). Example:
@@ -60,7 +61,7 @@ if (-e $configfile) {
 }
 
 if($db_type eq "Pg" || $db_type eq "mysql") {
-  $dsn = "DBI:$db_type:database=$db_name;host=$db_host";
+  $dsn = "DBI:$db_type:database=$db_name;host=$db_host;port=$db_port";
 } else {
   log_and_die "unsupported db_type $db_type";
 }
