@@ -71,12 +71,40 @@ services:
     network_mode: host
 ```
 
-## Build container image manually
+## Environment variables
 
-To build the images manually check out the repository on
-[github](https://github.com/volker-raschek/fetchmail-docker) with git and use
-the make command to build the container image.
+### DATABASE_TYPE
 
-```bash
-make container-image/build
-```
+Currently will be only postgres, mysql and mariadb supported. About the
+environment variable `DATABASE_TYPE` can the backend type defined. The value is
+required.
+
+| database type | value |
+| ------------- | ----- |
+| mysql/mariadb | `my`  |
+| postgres      | `Pg`  |
+
+### DATABASE_USER
+
+The environment variable `DATABASE_USER` is undefined and required. The value
+contains the database user which one fetchmail use to login.
+
+### DATABASE_PASSWORD
+
+The environment variable `DATABASE_PASSWORD` is undefined and required. The value
+contains the password of the database user which one fetchmail use to login.
+
+### DATABASE_HOST
+
+The environment variable `DATABASE_HOST` is undefined and required. The value
+contains the DNS name or IP address of the host, where the database is hosted.
+
+### DATABASE_PORT
+
+The environment variable `DATABASE_PORT` is undefined and required. The value
+contains the port of the host, where the database is listen on.
+
+### DATABASE_NAME
+
+The environment variable `DATABASE_NAME` is undefined and required. The value
+contains the name of the database against which should be logged in.
