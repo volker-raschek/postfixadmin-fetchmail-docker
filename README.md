@@ -8,8 +8,9 @@ This project contains all sources to build the container image
 mails from external servers and forward them to on local running mail server.
 
 The configuration file will be automatically generated based on information from
-a database. As table the fetchmail table from the schema of
-[postfixadmin](https://github.com/postfixadmin/postfixadmin) is expected.
+a supported database backend of
+[postfixadmin](https://github.com/postfixadmin/postfixadmin). The information
+are stored in the table `fetchmail` of the database scheme of PostfixAdmin.
 
 ## Usage
 
