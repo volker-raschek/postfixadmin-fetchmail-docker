@@ -1,4 +1,4 @@
-# fetchmail-docker
+# PostfixAdmin's fetchmail
 
 [![Build Status](https://drone.cryptic.systems/api/badges/volker.raschek/fetchmail-docker/status.svg)](https://drone.cryptic.systems/volker.raschek/fetchmail-docker)
 [![Docker Pulls](https://img.shields.io/docker/pulls/volkerraschek/fetchmail)](https://hub.docker.com/r/volkerraschek/fetchmail)
