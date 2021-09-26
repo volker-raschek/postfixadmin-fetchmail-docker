@@ -4,8 +4,9 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/volkerraschek/postfixadmin-fetchmail)](https://hub.docker.com/r/volkerraschek/postfixadmin-fetchmail)
 
 This project contains all sources to build the container image
-`docker.io/volkerraschek/fetchmail`. The primary goal of the image is to fetch
-mails from external servers and forward them to on local running mail server.
+`docker.io/volkerraschek/postfixadmin-fetchmail`. The primary goal of the image
+is to fetch mails from external servers and forward them to on local running
+mail server.
 
 The configuration file will be automatically generated based on information from
 a supported database backend of
