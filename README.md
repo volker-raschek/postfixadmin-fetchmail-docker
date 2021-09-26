@@ -1,7 +1,7 @@
 # PostfixAdmin's fetchmail
 
-[![Build Status](https://drone.cryptic.systems/api/badges/volker.raschek/fetchmail-docker/status.svg)](https://drone.cryptic.systems/volker.raschek/fetchmail-docker)
-[![Docker Pulls](https://img.shields.io/docker/pulls/volkerraschek/fetchmail)](https://hub.docker.com/r/volkerraschek/fetchmail)
+[![Build Status](https://drone.cryptic.systems/api/badges/volker.raschek/postfixadmin-fetchmail-docker/status.svg)](https://drone.cryptic.systems/volker.raschek/postfixadmin-fetchmail-docker)
+[![Docker Pulls](https://img.shields.io/docker/pulls/volkerraschek/postfixadmin-fetchmail)](https://hub.docker.com/r/volkerraschek/postfixadmin-fetchmail)
 
 This project contains all sources to build the container image
 `docker.io/volkerraschek/fetchmail`. The primary goal of the image is to fetch
