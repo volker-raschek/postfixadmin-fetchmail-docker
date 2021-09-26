@@ -1,4 +1,4 @@
-image: volkerraschek/fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}
+image: volkerraschek/postfixadmin-fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}
 {{#if build.tags}}
 tags:
 {{#each build.tags}}
@@ -8,12 +8,12 @@ tags:
 {{/if}}
 manifests:
   -
-    image: volkerraschek/fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}-amd64
+    image: volkerraschek/postfixadmin-fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}-amd64
     platform:
       architecture: amd64
       os: linux
   -
-    image: volkerraschek/fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}-armv7
+    image: volkerraschek/postfixadmin-fetchmail:{{#if build.tag}}{{trimPrefix "v" build.tag}}{{else}}latest{{/if}}-armv7
     platform:
       architecture: arm
       os: linux

@@ -57,7 +57,7 @@ steps:
     dockerfile: Dockerfile
     auto_tag: false
     tags: latest-amd64
-    repo: volkerraschek/fetchmail
+    repo: volkerraschek/postfixadmin-fetchmail
     username:
       from_secret: container_image_registry_user
     password:
@@ -112,7 +112,7 @@ steps:
     dockerfile: Dockerfile
     auto_tag: false
     tags: latest-armv7
-    repo: volkerraschek/fetchmail
+    repo: volkerraschek/postfixadmin-fetchmail
     username:
       from_secret: container_image_registry_user
     password:
@@ -213,7 +213,7 @@ steps:
     dockerfile: Dockerfile
     auto_tag: true
     auto_tag_suffix: amd64
-    repo: volkerraschek/fetchmail
+    repo: volkerraschek/postfixadmin-fetchmail
     username:
       from_secret: container_image_registry_user
     password:
@@ -248,7 +248,7 @@ trigger:
   event:
   - tag
   repo:
-  - volker.raschek/fetchmail-docker
+  - volker.raschek/postfixadmin-fetchmail-docker
 
 ---
 kind: pipeline
@@ -266,7 +266,7 @@ steps:
     dockerfile: Dockerfile
     auto_tag: true
     auto_tag_suffix: armv7
-    repo: volkerraschek/fetchmail
+    repo: volkerraschek/postfixadmin-fetchmail
     username:
       from_secret: container_image_registry_user
     password:
@@ -301,7 +301,7 @@ trigger:
   event:
   - tag
   repo:
-  - volker.raschek/fetchmail-docker
+  - volker.raschek/postfixadmin-fetchmail-docker
 
 ---
 kind: pipeline
@@ -348,7 +348,7 @@ trigger:
   event:
   - tag
   repo:
-  - volker.raschek/fetchmail-docker
+  - volker.raschek/postfixadmin-fetchmail-docker
 
 ---
 kind: pipeline
@@ -397,4 +397,4 @@ trigger:
   event:
   - push
   repo:
-  - volker.raschek/fetchmail-docker
+  - volker.raschek/postfixadmin-fetchmail-docker
