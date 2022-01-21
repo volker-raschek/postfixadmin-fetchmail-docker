@@ -35,7 +35,7 @@ openlog("fetchmail-all", "pid", "mail");
 
 sub log_and_die {
   my($message) = @_;
-  syslog("err", $message);
+  printf "err: %s\n", $message;
   die $message;
 }
 
@@ -90,7 +90,7 @@ my (%config);
 map{
   my ($id,$mailbox,$src_server,$src_auth,$src_user,$src_password,$src_folder,$fetchall,$keep,$protocol,$mda,$extra_options,$usessl,$sslcertck,$sslcertpath,$sslfingerprint)=@$_;
 
-  syslog("info","fetch ${src_user}@${src_server} for ${mailbox}");
+  printf "info: fetch %s@%s for %s\n", ${src_user}, ${src_server}, ${mailbox};
 
   $cmd="user '${src_user}' there with password '".decode_base64($src_password)."'";
   $cmd.=" folder '${src_folder}'" if ($src_folder);
@@ -112,7 +112,8 @@ set postmaster "postmaster"
 set nobouncemail
 set no spambounce
 set properties ""
-set syslog
+set no syslog
+set logfile /dev/stdout
 
 poll ${src_server} with proto ${protocol}
   $cmd
@@ -129,6 +130,9 @@ TXT
 
   $sql="UPDATE fetchmail SET returned_text=".$dbh->quote($ret).", date=now() WHERE id=".$id;
   $dbh->do($sql);
+
+  printf "info: fetched mails of %s@%s for %s\n", ${src_user}, ${src_server}, ${mailbox};
+
 }@{$dbh->selectall_arrayref($sql)};
 
 $lockmgr->unlock($lock_file);
