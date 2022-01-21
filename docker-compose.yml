@@ -1,12 +1,13 @@
 version: "3"
 services:
-  fetchmail:
-    container_name: fetchmail
-    image: volkerraschek/fetchmail-docker:latest
+  postfixadmin-fetchmail:
+    container_name: postfixadmin-fetchmail
+    image: docker.io/volkerraschek/postfixadmin-fetchmail:latest
     environment:
     - DATABASE_TYPE=${DATABASE_TYPE}
-    - DATABASE_HOST=${DATABASE_HOST}
-    - DATABASE_NAME=${DATABASE_NAME}
     - DATABASE_USER=${DATABASE_USER}
     - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+    - DATABASE_HOST=${DATABASE_HOST}
+    - DATABASE_PORT=${DATABASE_PORT}
+    - DATABASE_NAME=${DATABASE_NAME}
     network_mode: host
