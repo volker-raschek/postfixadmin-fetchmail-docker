@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.15.4
+FROM docker.io/library/alpine:3.16.0
 
 RUN echo "http://dl-3.alpinelinux.org/alpine/edge/testing/" >> /etc/apk/repositories
 RUN apk upgrade
