@@ -11,3 +11,4 @@ services:
     - DATABASE_PORT=${DATABASE_PORT}
     - DATABASE_NAME=${DATABASE_NAME}
     network_mode: host
+    privileged: true
