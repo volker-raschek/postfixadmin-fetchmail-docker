@@ -2,16 +2,11 @@
 PODMAN_BIN?=$(shell which podman)
 SKOPEO_BIN?=$(shell which skopeo)
 
-# FETCHMAIL_IMAGE_REGISTRY_NAME
-# Defines the name of the new container to be built using several variables.
-FETCHMAIL_IMAGE_REGISTRY_NAME:=docker.io
-FETCHMAIL_IMAGE_REGISTRY_USER:=volkerraschek
-
-FETCHMAIL_IMAGE_NAMESPACE?=${FETCHMAIL_IMAGE_REGISTRY_USER}
-FETCHMAIL_IMAGE_NAME:=postfixadmin-fetchmail
+# FETCHMAIL_IMAGE
+FETCHMAIL_IMAGE_REGISTRY_HOST:=git.cryptic.systems
+FETCHMAIL_IMAGE_REPOSITORY?=volker.raschek/postfixadmin-fetchmail
 FETCHMAIL_IMAGE_VERSION?=latest
-FETCHMAIL_IMAGE_FULLY_QUALIFIED=${FETCHMAIL_IMAGE_REGISTRY_NAME}/${FETCHMAIL_IMAGE_NAMESPACE}/${FETCHMAIL_IMAGE_NAME}:${FETCHMAIL_IMAGE_VERSION}
-
+FETCHMAIL_IMAGE_FULLY_QUALIFIED=${FETCHMAIL_IMAGE_REGISTRY_HOST}/${FETCHMAIL_IMAGE_REPOSITORY}:${FETCHMAIL_IMAGE_VERSION}
 
 # BUILD CONTAINER IMAGE
 # ==============================================================================
@@ -35,7 +30,7 @@ container-image/delete:
 # ==============================================================================
 PHONY+=container-image/push
 container-image/push:
-	echo ${FETCHMAIL_IMAGE_REGISTRY_PASSWORD} | ${PODMAN_BIN} login ${FETCHMAIL_IMAGE_REGISTRY_NAME} --username ${FETCHMAIL_IMAGE_REGISTRY_USER} --password-stdin
+	echo ${FETCHMAIL_IMAGE_REGISTRY_PASSWORD} | ${PODMAN_BIN} login ${FETCHMAIL_IMAGE_REGISTRY_HOST} --username ${FETCHMAIL_IMAGE_REGISTRY_USER} --password-stdin
 	${PODMAN_BIN} push ${FETCHMAIL_IMAGE_FULLY_QUALIFIED}
 	${PODMAN_BIN} logout ${FETCHMAIL_IMAGE_FULLY_QUALIFIED}
 
