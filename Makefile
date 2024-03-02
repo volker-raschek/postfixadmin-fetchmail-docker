@@ -23,7 +23,6 @@ container-image/build:
 PHONY:=container-image/delete
 container-image/delete:
 	- ${PODMAN_BIN} image rm ${FETCHMAIL_IMAGE_FULLY_QUALIFIED}
-	- ${PODMAN_BIN} image rm ${BASE_IMAGE_FULL}
 
 # PUSH CONTAINER IMAGE
 # ==============================================================================
@@ -31,7 +30,7 @@ PHONY+=container-image/push
 container-image/push:
 	echo ${FETCHMAIL_IMAGE_REGISTRY_PASSWORD} | ${PODMAN_BIN} login ${FETCHMAIL_IMAGE_REGISTRY_HOST} --username ${FETCHMAIL_IMAGE_REGISTRY_USER} --password-stdin
 	${PODMAN_BIN} push ${FETCHMAIL_IMAGE_FULLY_QUALIFIED}
-	${PODMAN_BIN} logout ${FETCHMAIL_IMAGE_FULLY_QUALIFIED}
+	${PODMAN_BIN} logout ${FETCHMAIL_IMAGE_REGISTRY_HOST}
 
 # PUSH CONTAINER IMAGE TO DOCKER
 # ==============================================================================
