@@ -1,6 +1,5 @@
 # PODMAN_BIN's and tools
 PODMAN_BIN?=$(shell which podman)
-SKOPEO_BIN?=$(shell which skopeo)
 
 # FETCHMAIL_IMAGE
 FETCHMAIL_IMAGE_REGISTRY_HOST:=git.cryptic.systems
