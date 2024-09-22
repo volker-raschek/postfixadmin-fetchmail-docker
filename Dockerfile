@@ -1,4 +1,4 @@
-FROM docker.io/library/alpine:3.19.1
+FROM docker.io/library/alpine:3.20.3
 
 # The file /etc/apk/repositories contains a list of the apk repositories. By
 # default contains this file a list of the stable repositories pointing to the
