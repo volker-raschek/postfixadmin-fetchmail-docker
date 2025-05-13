@@ -28,7 +28,7 @@ $ docker run \
   --env DATABASE_USER: fetchmail \
   --env DATABASE_PASSWORD: MySecretPassword \
   --network host \
-  volkerraschek/fetchmail:latest
+  git.cryptic.systems/volker.raschek/fetchmail:latest
 ```
 
 ### MySQL
@@ -43,7 +43,7 @@ $ docker run \
   --env DATABASE_USER: fetchmail \
   --env DATABASE_PASSWORD: MySecretPassword \
   --network host \
-  volkerraschek/fetchmail:latest
+  git.cryptic.systems/volker.raschek/fetchmail:latest
 ```
 
 ### docker-compose
@@ -56,7 +56,7 @@ located exclusively in the same directory as the `docker-compose.yml` file and m
 version: "3"
 services:
   fetchmail:
-    image: volkerraschek/fetchmail:latest
+    image: git.cryptic.systems/volker.raschek/fetchmail:latest
     environment:
     - DATABASE_TYPE=${DATABASE_TYPE}
     - DATABASE_HOST=${DATABASE_HOST}
